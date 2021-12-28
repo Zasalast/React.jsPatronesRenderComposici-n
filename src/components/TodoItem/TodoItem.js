@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import './TodoItem.css';
-import { TodoContext } from '../../context/todoContext'
+import { TodoContext } from '../../hooks/useTodos'
 import { MdOutlineCheckBoxOutlineBlank, MdOutlineCheckBox, MdDeleteOutline, MdUndo } from "react-icons/md";
 import { DeleteIcon } from '../TodoIcon/ DeleteIcon'
 import { CheckIcon} from '../TodoIcon/CheckIcon'
 import {DisableIcon} from '../TodoIcon/DisableIcon'
 function TodoItem(props) {
-  const {    deleteTodo  } = useContext(TodoContext)
-  const {text,completed,unchecktodo,completeTodo}= props
+  /* const {    deleteTodo  } = useContext(TodoContext) */
+  const {text,completed,unchecktodo,completeTodo,deleteTodo}= props
  
     return (
       <li className="TodoItem">

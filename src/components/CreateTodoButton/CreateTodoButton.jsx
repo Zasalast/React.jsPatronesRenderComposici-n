@@ -1,8 +1,8 @@
 import React from 'react'
 import "./CreateTodoButton.css"
-import { TodoContext} from '../../context/todoContext'
+import { useTodos} from '../../hooks/useTodos'
 function CreateTodoButton() {
-    const {  setOpenModal}=React.useContext(TodoContext)
+    const {  setOpenModal}=useTodos()
     const onClickButton = () => {
         setOpenModal(prevState=>!prevState)     
     }

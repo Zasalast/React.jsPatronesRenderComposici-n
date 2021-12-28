@@ -1,6 +1,6 @@
 import React from 'react';
 import { TodoIcon } from './TodoIcon';
-import { TodoContext } from './../../context/todoContext'
+import { TodoContext } from '../../hooks/useTodos'
 function DeleteIcon({deleteTodo} ) {
    /*   const {    deleteTodo  } = useContext(TodoContext) */
   return (
