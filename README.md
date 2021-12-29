@@ -90,11 +90,13 @@ const [newTodoValue,setNewTodoValue]= React.useState('')
          setNewTodoValue(event.target.value);
      }```
 
-     <!---
-     github markdown--->
-     * [x] Task1
-     * [ ] Task2
-     * [x] Task3
+ <!--- github markdown--->
+ 
+ * [x] Task1
+ 
+ * [ ] Task2
+ 
+ * [x] Task3
      
      @zasalast
      :smiley:
