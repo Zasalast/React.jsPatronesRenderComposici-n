@@ -1,5 +1,5 @@
 import React from 'react';
- import ContentLoader from 'react-content-loader'
+  
 
   import './../components/Modal/index.css'
 import { TodoCounter } from '../components/TodoCounter/TodoCounter';
@@ -10,8 +10,11 @@ import {CreateTodoButton} from '../components/CreateTodoButton/CreateTodoButton'
 import {TodoItem} from '../components/TodoItem/TodoItem';
 import {Modal} from './../components/Modal/index'
 import { TodoForm } from '../components/TodoForm';
-import { Header} from './../components/Header/Header'
- 
+import { Header } from './../components/Header/Header'
+import {  TodosEmpty } from './../components/TodoEmpty/TodoEmpty'
+import { TodosError } from './../components/TodosError/TodosError'
+import { TodosLoading} from './../components/TodosLoading/TodosLoading'
+ import { SearchValuesTodos} from './../components/SearchValuesTodos/SearchValuesTodos'
  
 function App() {
   const {
@@ -27,8 +30,28 @@ function App() {
     <React.Fragment>
       <Header>
       <TodoCounter completedTodos={ completedTodos} totaltodos={totaltodos} />
-      <TodoSearch searchValue={searchValue } setSearchValue={setSearchValue }/>    </Header>
-          <TodoList>
+       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />    </Header>
+     <   TodoList
+       error={error}
+        searchValue={searchValue}
+       loading={loading}totaltodos={totaltodos}
+       searchTodos={searchTodos}
+       onError={() =>  <TodosError /> }
+       onLoading={() => <TodosLoading />}
+       onEmptyTodos={() => <TodosEmpty />}
+       onSearchValuesTodos={(searchValue) => <SearchValuesTodos searchValue={searchValue}/>}
+       render={todo => (
+          <TodoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            completeTodo={() => completeTodo(todo.text)}
+            unchecktodo ={() => unchecktodo(todo.text)}
+            deleteTodo={() => deleteTodo(todo.text)}
+               />
+            )}
+     />
+      {/*     <TodoList>
         {
           error && <p>desesperate, ocurrio un error...</p>
         }
@@ -63,7 +86,7 @@ function App() {
             deleteTodo={() => deleteTodo(todo.text)}
                />
             ))}
-             </TodoList>
+             </TodoList> */}
       {openModal && <Modal setOpenModal={setOpenModal}><div>
   
         <TodoForm addTodo={ addTodo} setOpenModal={setOpenModal }/>

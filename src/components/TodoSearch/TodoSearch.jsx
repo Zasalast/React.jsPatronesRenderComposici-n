@@ -14,7 +14,7 @@ function TodoSearch({ searchValue, setSearchValue }) {
         <input className="TodoSearch" placeholder='search To Do'
           value={searchValue}
         onChange={onSearchValueChange}/>
-        <p>{ searchValue}</p>
+        <p>{ searchValue}fg</p>
       </div>
       
 
