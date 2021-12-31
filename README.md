@@ -73,7 +73,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 |Table|column|
 |:-----:|:------:|
 |nioas|asdaas
-```jsx
+
+``jsx
 const [newTodoValue,setNewTodoValue]= React.useState('')
     const onCancel = () => {
            setOpenModal(false)
@@ -88,9 +89,9 @@ const [newTodoValue,setNewTodoValue]= React.useState('')
      const onChange = (event) => {
           
          setNewTodoValue(event.target.value);
-     }```
+     }``
 
- <!--- github markdown--->
+ <!-- github markdown -->
  
  * [x] Task1
  
