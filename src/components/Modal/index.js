@@ -5,7 +5,8 @@ import './index.css'
 const Modal = ({ children,setOpenModal }) => {
   /* const {  setOpenModal}=React.useContext *//* (TodoContext) */
     const onClickButton = () => {
-        setOpenModal(false) 
+      console.log("modal onclick")
+        setOpenModal(prevState=>!prevState) 
     }
   return ReactDOM.createPortal( 
     <div className='modal'>

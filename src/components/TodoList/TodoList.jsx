@@ -1,17 +1,16 @@
 import React from 'react'
 import './TodoList.css'
-function TodoList(props) {
-   
+function TodoList({searchTodos,searchValue,error,children,loading,totaltodos,render,onError,onLoading,onEmptyTodos,onSearchValuesTodos}) {
+   const renderFunction=children || render;
     return (
         <section>
-             {props.error && props.onError()}
-       { props.loading && props.onLoading()}
-            {(!props.loading && !props.searchTodos?.length) && props.onSearchValuesTodos(props.searchValue)}
-            {(!props.loading && !props.totaltodos) && props.onEmptyTodos( )}
-           {props.searchTodos.map(props.render)}
-            <ul>
-              {props.children}
-            </ul>
+             { error &&  onError()}
+       {  loading &&  onLoading()}
+       {(! loading && !searchTodos?.length) &&  onSearchValuesTodos( searchValue)}
+       {(! loading && searchTodos?.length) &&  onSearchValuesTodos( searchValue)}
+            {(! loading &&  (totaltodos===0)) &&  onEmptyTodos(   )}
+           { searchTodos.map( renderFunction)}
+            
         </section>
     )
 }

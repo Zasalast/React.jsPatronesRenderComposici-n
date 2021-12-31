@@ -28,20 +28,21 @@
    border: 5px 5px 2px 2px;
 }
 .Icon {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ /*  cursor: pointer; */
+ /*  display: flex; */
+ /*  justify-content: center;
+  align-items: center; */
   height: 48px;
   width: 48px;
-  font-size: 24px;
-  font-weight: bold;
+ /*  font-size: 24px; */
+ /*  font-weight: bold; */
   /* background-color: #CCC; */
+  top: 25px; left: 25px;
 }
 
 .Icon-check {
   position: absolute;
-  left: 12px;
+ 
 }
 .Icon-check:hover {
   color: rgb(38, 0, 255);

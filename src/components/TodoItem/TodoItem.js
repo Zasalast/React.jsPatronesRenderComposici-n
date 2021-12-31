@@ -11,18 +11,19 @@ function TodoItem(props) {
  
     return (
       <li className="TodoItem">
-       <span   className={`Icon Icon-delete Icon-check ${completed && 'Icon-check--desactive'}`}
+      <div>  {completed ?  <span   className={`Icon Icon-check ${completed && 'Icon-check--desactive'}`}
           onClick={ unchecktodo}>
          <MdOutlineCheckBoxOutlineBlank/>{/* <DisableIcon completed={props.completed}
         unchecktodo={props.unchecktodo}/> */}
-        </span> 
-     <span className={`Icon Icon-check ${completed && 'Icon-check--active'}`}
+        </span> :<span className={`Icon Icon-check ${completed && 'Icon-check--active'}`}
         onClick={completeTodo}>
         <MdOutlineCheckBox/>
           {/* <CheckIcon
         completed={completed}
         completeTodo={completeTodo}
-        /> */}</span> 
+        /> */}</span>   } </div>
+      
+     
         
         <p
         className={`TodoItem-p ${completed && 'TodoItem-p--complete'}`}

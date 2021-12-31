@@ -28,18 +28,19 @@ function App() {
         }=useTodos() ;
  return (
     <React.Fragment>
-      <Header>
-      <TodoCounter completedTodos={ completedTodos} totaltodos={totaltodos} />
-       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />    </Header>
+      <Header  >
+      <TodoCounter loading={loading} completedTodos={ completedTodos} totaltodos={totaltodos} />
+       <TodoSearch loading={loading} searchValue={searchValue} setSearchValue={setSearchValue} />    </Header>
      <   TodoList
        error={error}
         searchValue={searchValue}
-       loading={loading}totaltodos={totaltodos}
+       loading={loading}
+       totaltodos={totaltodos}
        searchTodos={searchTodos}
        onError={() =>  <TodosError /> }
        onLoading={() => <TodosLoading />}
-       onEmptyTodos={() => <TodosEmpty />}
-       onSearchValuesTodos={(searchValue) => <SearchValuesTodos searchValue={searchValue}/>}
+       onEmptyTodos={() => <TodosEmpty  />}
+       onSearchValuesTodos={(searchValue,searchTodos) => <SearchValuesTodos searchTodos={searchTodos} searchValue={searchValue}/>}
        render={todo => (
           <TodoItem
             key={todo.text}
