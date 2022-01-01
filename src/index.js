@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-/* import App from './views/index'; */
+import App from './views/index';
 import reportWebVitals from './reportWebVitals';
-const App=(props)=>{
+/* const App=(props)=>{
   return(<div>
     <h1>
       !{props.saludo}, {props.name}!
@@ -11,7 +11,7 @@ const App=(props)=>{
   </div>)
 }
 
-/* const withWhatever=(WrappedComponent)=>{
+const withWhatever=(WrappedComponent)=>{
   return function TruthComponent(props){
     return (
       <>
@@ -20,7 +20,7 @@ const App=(props)=>{
       </>
     )
   }
-} */
+}
 const withWhatever=(WrappedComponent)=>{
   return function 
   WrappedComponentWithSaludo(saludo){
@@ -33,11 +33,12 @@ const withWhatever=(WrappedComponent)=>{
     )
   }}
 }
-const AppWithSaludo=withWhatever(App)("Buena noche")
+const AppWithSaludo=withWhatever(App)("Buena noche") */
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppWithSaludo name="nata"  />
+  {/*   <AppWithSaludo name="nata"  /> */}
+  <App/>
   {/*   <App name="nat" saludo="hola"/> */}
   </React.StrictMode>,
   document.getElementById('root')
