@@ -15,7 +15,7 @@ import {  TodosEmpty } from './../components/TodoEmpty/TodoEmpty'
 import { TodosError } from './../components/TodosError/TodosError'
 import { TodosLoading} from './../components/TodosLoading/TodosLoading'
  import { SearchValuesTodos} from './../components/SearchValuesTodos/SearchValuesTodos'
-import { ChangeAlertWithStorageListener } from '../components/ChangeAlert';
+import { ChangeAlert } from '../components/ChangeAlert';
  
 function App() {
   const {
@@ -96,7 +96,7 @@ function App() {
       </div>
      
     </Modal>}
-     <ChangeAlertWithStorageListener
+     <ChangeAlert 
      sincronize={sincronizeTodos}
      />
       <CreateTodoButton setOpenModal={setOpenModal} />
