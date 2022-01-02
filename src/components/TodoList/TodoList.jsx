@@ -9,7 +9,7 @@ function TodoList({searchTodos,searchValue,error,children,loading,totaltodos,ren
        {(! loading && !searchTodos?.length) &&  onSearchValuesTodos( searchValue)}
        {(! loading && searchTodos?.length) &&  onSearchValuesTodos( searchValue)}
             {(! loading &&  (totaltodos===0)) &&  onEmptyTodos(   )}
-           { searchTodos.map( renderFunction)}
+           {(! loading && ! error ) &&searchTodos.map( renderFunction)}
             
         </section>
     )
