@@ -4,10 +4,12 @@ const useStorageListener=(sincronize )=>
 {
     const [storageChange, setStorageChange] = React.useState(false)
     window.addEventListener('storage', (change) => {
-        if (change.key === 'TODOS_V1') {
-            console.log("hubo cambios")
-            setStorageChange(true)
-        }
+      if (change.key==='TODOS_V1') {
+         console.log('hubo cambios en  TODOS_1',change)
+         setStorageChange(true)
+     } else {
+        console.log('no hubo cambios en  TODOS_1')
+     }
     });
     const toggleShow = () => {
         sincronize();
