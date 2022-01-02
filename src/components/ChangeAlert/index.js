@@ -2,7 +2,7 @@ import React from 'react';
 import { WithStorageListener } from './withStorageListener';
 
 const ChangeAlert=({show,toggleShow})=>{
-    if(show){return <p>Hubo cambios</p>}
+    if(show){return <div><p>Hubo cambios</p><button type="" onClick={()=>toggleShow(false)}>recargar</button></div>}
     else{return <></>}
 }
 
