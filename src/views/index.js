@@ -23,9 +23,16 @@ function App() {
           loading,
           searchTodos,
           completeTodo,
-    deleteTodo,totaltodos,completedTodos,
-    openModal,setOpenModal,
-      unchecktodo,searchValue, setSearchValue,addTodo,sincronizeTodos
+    deleteTodo,
+    totaltodos,
+    completedTodos,
+    openModal,
+    setOpenModal,
+      unchecktodo,
+      searchValue,
+       setSearchValue,
+       addTodo,
+       sincronizeTodos
         }=useTodos() ;
  return (
     <React.Fragment>
@@ -33,6 +40,9 @@ function App() {
          <TodoCounter completedTodos={ completedTodos} totaltodos={totaltodos} />
          <TodoSearch   searchValue={searchValue} setSearchValue={setSearchValue} />    
        </Header>
+       <ChangeAlert 
+     sincronize={sincronizeTodos}
+     />
      <   TodoList
        error={error}
         searchValue={searchValue}
@@ -96,9 +106,7 @@ function App() {
       </div>
      
     </Modal>}
-     <ChangeAlert 
-     sincronize={sincronizeTodos}
-     />
+
       <CreateTodoButton setOpenModal={setOpenModal} />
     </React.Fragment>
   );

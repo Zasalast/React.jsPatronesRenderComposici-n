@@ -11,13 +11,17 @@ const useStorageListener=(sincronize )=>
         console.log('no hubo cambios en  TODOS_1')
      }
     });
-    const toggleShow = () => {
-        sincronize();
-        setStorageChange(false)
-    }
+    const toggleShow = (even) => {
+        if (even) {
+            setStorageChange(false)        
+        }else{
+            sincronize();
+            setStorageChange(false)            
+        }    
+    };
     return {
         show: storageChange,
         toggleShow
-    }   
+    };   
 }
 export {useStorageListener}
